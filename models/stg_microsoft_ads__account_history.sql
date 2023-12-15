@@ -1,4 +1,10 @@
-{{ config(enabled=var('ad_reporting__microsoft_ads_enabled', True)) }}
+{{ config(enabled=var('ad_reporting__microsoft_ads_enabled', True),
+     partition_by={
+      "field": "date_day", 
+      "data_type": "date",
+      "granularity": "day"
+    }
+    ) }}
 
 with base as (
 
