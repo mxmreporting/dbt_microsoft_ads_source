@@ -1,6 +1,6 @@
 {{ config(enabled=var('ad_reporting__microsoft_ads_enabled', True),
      partition_by={
-      "field": "date_day", 
+      "field": "modified_at", 
       "data_type": "date",
       "granularity": "day"
     }
