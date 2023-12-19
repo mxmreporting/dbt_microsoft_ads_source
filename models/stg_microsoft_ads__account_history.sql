@@ -1,4 +1,5 @@
 {{ config(enabled=var('ad_reporting__microsoft_ads_enabled', True),
+     unique_key = ['source_relation','account_id','modified_at'],
      partition_by={
       "field": "modified_at", 
       "data_type": "TIMESTAMP",
