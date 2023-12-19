@@ -1,4 +1,5 @@
 {{ config(enabled=var('ad_reporting__microsoft_ads_enabled', True),
+     unique_key = ['source_relation','date_day','account_id','campaign_id','ad_group_id','ad_id','keyword_id','search_query','device_os','device_type','network','language','bid_match_type','delivered_match_type','top_vs_other'],
     partition_by={
       "field": "date_day", 
       "data_type": "date",
