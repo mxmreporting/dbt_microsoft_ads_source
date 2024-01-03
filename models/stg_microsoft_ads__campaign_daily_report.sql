@@ -36,7 +36,7 @@ final as (
 
     select
         source_relation, 
-        date as date_day,
+        DATE(TIMESTAMP(date, "America/New_York")) AS date_day,     --EST timezone conversion
         account_id,
         campaign_id,
         currency_code,
