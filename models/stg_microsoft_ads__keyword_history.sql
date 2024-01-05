@@ -38,7 +38,7 @@ final as (
         source_relation, 
         id as keyword_id,
         name as keyword_name,
-        modified_time as modified_at,
+       CAST(FORMAT_TIMESTAMP("%F %T", modified_time, "America/New_York") AS TIMESTAMP) as modified_at,    --EST Conversion
         ad_group_id,
         match_type,
         status,
