@@ -39,7 +39,7 @@ final as (
         id as campaign_id,
         name as campaign_name,
         account_id,
-        modified_time as modified_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", modified_time, "America/New_York") AS TIMESTAMP) as modified_at,    --EST Conversion
         type,
         time_zone,
         status,
