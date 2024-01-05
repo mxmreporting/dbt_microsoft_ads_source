@@ -39,9 +39,9 @@ final as (
         id as ad_group_id,
         name as ad_group_name,
         campaign_id,
-        modified_time as modified_at,
-        start_date,
-        end_date,
+        CAST(FORMAT_TIMESTAMP("%F %T", modified_time, "America/New_York") AS TIMESTAMP) as modified_at,       --EST Conversion
+        DATE(TIMESTAMP(start_date, "America/New_York")) AS start_date,         --EST Conversion
+        DATE(TIMESTAMP(end_date, "America/New_York")) AS end_date,              --EST Conversion
         status,
         row_number() over (partition by source_relation, id order by modified_time desc) = 1 as is_most_recent_record
     from fields
