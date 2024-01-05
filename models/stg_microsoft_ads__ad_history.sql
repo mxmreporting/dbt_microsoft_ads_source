@@ -40,7 +40,7 @@ final as (
         title_part_1 as ad_name,
         final_url,
         ad_group_id,
-        modified_time as modified_at,
+        CAST(FORMAT_TIMESTAMP("%F %T", modified_time, "America/New_York") AS TIMESTAMP) as modified_at,    --EST Conversion
         status,
         type,
         row_number() over (partition by source_relation, id order by modified_time desc) = 1 as is_most_recent_record
