@@ -7,7 +7,11 @@
     {"name": "ad_group_id", "datatype": dbt.type_int()},
     {"name": "modified_time", "datatype": dbt.type_timestamp()},
     {"name": "status", "datatype": dbt.type_string()},
-    {"name": "type", "datatype": dbt.type_string()}
+    {"name": "type", "datatype": dbt.type_string()},
+    {"name": "title_part_2", "datatype": dbt.type_string()},
+    {"name": "title_part_3", "datatype": dbt.type_string()},
+    {"name": "title", "datatype": dbt.type_string()},
+    {"name": "text", "datatype": dbt.type_string()}
 ] %}
 
 {{ return(columns) }}
