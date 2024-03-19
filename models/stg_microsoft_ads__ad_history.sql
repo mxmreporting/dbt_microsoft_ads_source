@@ -43,6 +43,11 @@ final as (
         CAST(FORMAT_TIMESTAMP("%F %T", modified_time, "America/New_York") AS TIMESTAMP) as modified_at,    --EST Conversion
         status,
         type,
+        text,
+        title,
+        title_part_1,
+        title_part_2,
+        title_part_3
         row_number() over (partition by source_relation, id order by modified_time desc) = 1 as is_most_recent_record
     from fields
 )
