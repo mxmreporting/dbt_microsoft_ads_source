@@ -36,7 +36,7 @@ final as (
 
     select
         source_relation, 
-        date as date_day
+        date as date_day,
         account_id,
         campaign_id,
         ad_group_id,
