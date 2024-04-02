@@ -36,7 +36,7 @@ final as (
 
     select
         source_relation, 
-        DATE(TIMESTAMP(date, "America/New_York")) AS date_day,     --EST timezone conversion
+        date as date_day,    
         account_id,
         device_os,
         device_type,
